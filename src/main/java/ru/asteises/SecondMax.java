@@ -1,20 +1,31 @@
 package main.java.ru.asteises;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 // Реализовать алгоритм поиска индекса второго максимального значения в массиве;
 public class SecondMax {
 
     public static void main(String[] args) {
 
-        int[] num = {13, 12, 15, 11, 9, 12, 16};
-        List<Integer> list = Arrays.stream(num).boxed().toList();
-        Integer max = Collections.max(list);
-        list.remove(max);
-        int secondMax = Collections.max(list);
-        System.out.println(secondMax);
+        Integer[] num = {13, 12, 15, 11, 9, 12, 16};
+
+        // Способ №1
+        // Отсортировать массив, сделать Distinct и взять 2 значение;
+
+        // Способ №2
+        int maximum = num[0];
+        int secondMaximum = num[1];
+        for (int checkNumber : num) {
+            if (checkNumber > maximum) {
+                secondMaximum = maximum;
+                maximum = checkNumber;
+            } else if (checkNumber > secondMaximum) {
+                secondMaximum = checkNumber;
+            }
+        }
+        System.out.println(secondMaximum);
     }
 
 }

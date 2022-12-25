@@ -14,13 +14,8 @@ public class Anagramma {
                 .toString();
     }
 
-    public static void valid(String s1, String s2) {
-
-        if (s1.equals(s2)) {
-            System.out.println("это - АНАГРАММА");
-        } else {
-            System.out.println("это - НЕ АНАГРАММА");
-        }
+    public static Boolean valid(String s1, String s2) {
+        return s1.equals(s2);
     }
 
     public static void main(String[] args) {
@@ -35,7 +30,9 @@ public class Anagramma {
 
             String s1Sorted = sort(s1);
             String s2Sorted = sort(s2);
-            valid(s1Sorted, s2Sorted);
+            System.out.println(valid(s1Sorted, s2Sorted));
+        } else {
+            System.out.println("Точно не анаграмма, так как длины слов различаются.");
         }
     }
 }

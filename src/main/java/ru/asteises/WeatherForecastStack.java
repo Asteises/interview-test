@@ -5,6 +5,14 @@ import java.util.Stack;
 
 public class WeatherForecastStack {
 
+    public static void main(String[] args) {
+
+        int[] num = {13, 12, 15, 11, 9, 12, 1};
+        //Ожидаем результат: [2, 1, 4, 2, 1, 1, 0]
+
+        System.out.println(Arrays.toString(toArray2(num)));
+    }
+
     static class Pair {
         int value;
         int index;
@@ -14,27 +22,20 @@ public class WeatherForecastStack {
         }
     }
 
-    public static void main(String[] args) {
-
+    public static int[] toArray2(int[] numbers) {
+        // Способ №2
         Stack<Pair> stack = new Stack<>();
-        int[] num = {13, 12, 15, 11, 9, 12, 16};
-        int[] result = new int[num.length]; // Создаем новый массив такой же длины как и первый;
-        //Ожидаем результат: [2, 1, 4, 2, 1, 1, 0]
-
-        for (int i = num.length - 1; i >= 0; i--) { // проходимся по массиву с конца;
-            Pair pair = new Pair(num[i], i); // каждый раз создаем новую пару;
-            if (stack.empty()) { // Чтобы положить первый элемент в стек;
-                stack.push(pair);
-                continue;
-            }
-            if (pair.value > stack.peek().value) {
+        int[] result = new int[numbers.length]; // Создаем новый массив такой же длины как и первый;
+        for (int i = numbers.length - 1; i >= 0; i--) { // проходимся по массиву с конца;
+            while (!stack.isEmpty() && stack.peek().value <= numbers[i]) {
                 stack.pop();
             }
-            result[pair.index] = stack.peek().index - pair.index;
-            if (stack.size() == 1) {
-                stack.push(pair);
+            if (!stack.isEmpty()) {
+                result[i] = stack.peek().index - i;
             }
+            stack.push(new Pair(numbers[i], i));
         }
         System.out.println(Arrays.toString(result));
+        return result;
     }
 }
