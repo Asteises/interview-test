@@ -1,6 +1,5 @@
 package main.java.ru.asteises;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 // На вход приходит массив int и значение k, необходимо найти два значения (индексы) в массиве, которые в сумме дают k;

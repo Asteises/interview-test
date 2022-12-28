@@ -1,9 +1,5 @@
 package main.java.ru.asteises;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
-
 // Реализовать алгоритм поиска индекса второго максимального значения в массиве;
 public class SecondMax {
 
@@ -12,7 +8,7 @@ public class SecondMax {
         Integer[] num = {13, 12, 15, 11, 9, 12, 16};
 
         // Способ №1
-        // Отсортировать массив, сделать Distinct и взять 2 значение;
+        // TODO Отсортировать массив, сделать Distinct и взять 2 значение;
 
         // Способ №2
         int maximum = num[0];
