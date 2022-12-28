@@ -1,9 +1,5 @@
 package main.java.ru.asteises;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
-
 // Реализовать алгоритм поиска индекса второго максимального значения в массиве;
 public class SecondMax {
 
