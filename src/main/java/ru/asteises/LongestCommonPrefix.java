@@ -1,11 +1,21 @@
 package main.java.ru.asteises;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+
 // Приходит массив из строк, необходимо найти самый длинный общий префикс;
 public class LongestCommonPrefix {
 
     public static void main(String[] args) {
 
         String[] strings = {"flower", "flow", "flick"};
+        System.out.println(searchLongestPrefix(strings));
+        System.out.println(searchLongestPrefixSolutionTwo(strings));
+
+    }
+
+    public static String searchLongestPrefix(String[] strings) {
+
         String result = "";
         int flag = strings.length - 1;
         for (int i = 0; i < strings[0].toCharArray().length; i++) {
@@ -23,6 +33,26 @@ public class LongestCommonPrefix {
                 flag = strings.length - 1;
             }
         }
-        System.out.println(result);
+        return result;
     }
+
+    public static String searchLongestPrefixSolutionTwo(String[] strings) {
+
+        StringBuilder result = new StringBuilder();
+
+        Arrays.sort(strings);
+
+        String firstString = strings[0];
+        String lastString = strings[strings.length - 1];
+
+        for (int i = 0; i < firstString.length(); i++) {
+            if (firstString.charAt(i) == lastString.charAt(i)) {
+                result.append(firstString.charAt(i));
+            } else {
+                break;
+            }
+        }
+        return result.toString();
+    }
+
 }

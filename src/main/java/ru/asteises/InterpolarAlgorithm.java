@@ -56,10 +56,10 @@ public class InterpolarAlgorithm {
 
         if (x > sortNumArray[targetIndex]) {
             int[] subArray = Arrays.copyOfRange(sortNumArray, targetIndex + 1, rightIndex);
-            targetIndex = recursionSolution(subArray, x);
+            recursionSolution(subArray, x);
         } else if (x < sortNumArray[targetIndex]) {
             int[] subArray = Arrays.copyOfRange(sortNumArray, leftIndex, rightIndex - 1);
-            targetIndex = recursionSolution(subArray, x);
+            recursionSolution(subArray, x);
         } else if (x == sortNumArray[targetIndex]) {
             return targetIndex;
         }

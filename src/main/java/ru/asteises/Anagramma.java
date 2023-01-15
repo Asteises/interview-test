@@ -27,7 +27,6 @@ public class Anagramma {
         String s2 = scanner.nextLine();
 
         if (s1.length() == s2.length()) {
-
             String s1Sorted = sort(s1);
             String s2Sorted = sort(s2);
             System.out.println(valid(s1Sorted, s2Sorted));
