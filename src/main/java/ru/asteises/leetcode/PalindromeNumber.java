@@ -34,6 +34,8 @@ public class PalindromeNumber {
 
         return stringNumber.equals(reverseNumber);
     }
+    // value = 0xA
+    // [0xA] -> [0x14] -> [0xFC] -> [0xAG] -> [0xB] -> [0X54]
 
     public static boolean classicSolution(int number) {
         String stringNumber = Integer.toString(number);
