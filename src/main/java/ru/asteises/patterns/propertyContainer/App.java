@@ -11,7 +11,7 @@ public class App {
         movie1.setProp("name", "Film 1");
         movie1.setProp("releaseDate", LocalDate.of(2023, 4, 25));
         System.out.println(movie1.getProp("id") + " *** " + movie1.getProp("name") + " *** " + movie1.getProp("releaseDate"));
-        System.out.println(movie1.);
+        System.out.println(movie1.getImage());
 
         Movie movie2 = new Movie();
         movie2.setProp("country", "Russia");

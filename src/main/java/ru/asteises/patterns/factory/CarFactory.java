@@ -4,16 +4,11 @@ public class CarFactory {
 
     public Car getCar(CarType carType) {
 
-        Car car = null;
+        Car car = switch (carType) {
+            case BMW -> new Bmw();
+            case AUDI -> new Audi();
+        };
 
-        switch (carType) {
-            case BMW:
-                car = new Bmw();
-                break;
-            case AUDI:
-                car = new Audi();
-                break;
-        }
         car.drive();
         car.startup();
         return car;

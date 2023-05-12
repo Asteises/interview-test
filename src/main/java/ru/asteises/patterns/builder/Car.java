@@ -4,6 +4,7 @@ public class Car {
 
     private String name;
     private Integer speed;
+    private Integer horsePower;
 
     @Override
     public String toString() {
@@ -13,8 +14,6 @@ public class Car {
                 ", horsePower=" + horsePower +
                 '}';
     }
-
-    private Integer horsePower;
 
     public String getName() {
         return name;
